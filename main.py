@@ -14,7 +14,18 @@ userAgents = ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1
 website = "https://hamishandandy.com/shop/"
 html_data = requests.get(website, headers={'User-Agent': random.choice(userAgents)})
 
-print(html_data.text)
+#print(html_data.text)
 
 # Parse HTML Code
+# create beautiful soup object
 soup = BeautifulSoup(html_data.content, "html.parser")
+
+shop_elements = soup.find_all("div", class_="c-product-tile__wrap")
+print(shop_elements)
+
+for element in shop_elements:
+    product_element = element.find_all("h5")
+    stock_element = element.find_all("span", class_="soldout-tag")
+    print(product_element, end="\n"*2)
+    print(stock_element, end="\n"*2)
+    
