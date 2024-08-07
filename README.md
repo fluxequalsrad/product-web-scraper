@@ -1,5 +1,3 @@
-# Hamish and Andy web-scraper
-Web Scraper to check for when products are in stock
+# Product Web Scraper - Hamish and Andy
 
-Web scraper built using Python and Beautiful Soup to check for when an item is back in stock
-Pulls item name and checks for <span class="soldout-tag">sold out</span>
+During the Christmas holidays, my sister expressed her frustration about never being able to buy the "Lost touch with the common man" t-shirt produced by Australian radio duo Hamish and Andy as it was always out of stock. To help her catch when new stock became available, I decided to write the following Python script that could monitor its availability. This script uses the BeautifulSoup library to parse the sites HTML.
